@@ -1,0 +1,20 @@
+# Backend
+backend/target/
+backend/data/
+*.log
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/coverage/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Secretos locales: nunca se suben (claves de la base, WiFi, tokens)
+.env
+.env.*
+secrets.*
+application-local.yml

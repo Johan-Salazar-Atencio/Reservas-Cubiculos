@@ -1,0 +1,17 @@
+# Perfil de desarrollo: base H2 en memoria, datos de demostración y reloj simulado.
+# Los valores de este archivo son SOLO para desarrollo; no sirven para producción.
+spring:
+  datasource:
+    url: jdbc:h2:mem:reservas;MODE=PostgreSQL;DB_CLOSE_DELAY=-1
+    username: sa
+    password: ""
+
+reservas:
+  # En desarrollo la atención está abierta todos los días para poder probar cualquier día de la semana.
+  dias-atencion: [MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY]
+  sensor-token: dev-sensor-token
+  jwt-secreto: dev-secreto-solo-para-desarrollo-cambialo-en-produccion-0123456789
+  demo:
+    habilitado: true
+    hora-inicio: "10:00"       # el reloj simulado arranca hoy a esta hora
+    clave-admin: demo-admin-2026

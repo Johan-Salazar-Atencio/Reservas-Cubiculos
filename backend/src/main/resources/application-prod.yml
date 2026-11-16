@@ -1,0 +1,17 @@
+# Perfil de producción: PostgreSQL y secretos por variables de entorno (nada de claves en este archivo).
+#   RESERVAS_DB_URL, RESERVAS_DB_USUARIO, RESERVAS_DB_CLAVE
+#   RESERVAS_JWT_SECRETO (mínimo 32 caracteres), RESERVAS_SENSOR_TOKEN, RESERVAS_CORS
+spring:
+  datasource:
+    url: ${RESERVAS_DB_URL:jdbc:postgresql://localhost:5432/bd_reservas_cubiculos}
+    username: ${RESERVAS_DB_USUARIO:postgres}
+    password: ${RESERVAS_DB_CLAVE:}
+  jpa:
+    hibernate:
+      ddl-auto: ${RESERVAS_DDL:update}
+
+server:
+  port: ${PORT:9095}
+
+reservas:
+  cors-origenes: ${RESERVAS_CORS:http://localhost:5195}

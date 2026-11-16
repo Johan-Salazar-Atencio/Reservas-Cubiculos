@@ -1,0 +1,10 @@
+# Perfil de pruebas: base H2 aparte, reloj congelado y secretos de mentira.
+spring:
+  datasource:
+    url: jdbc:h2:mem:reservas_test;MODE=PostgreSQL;DB_CLOSE_DELAY=-1
+    username: sa
+    password: ""
+
+reservas:
+  jwt-secreto: secreto-de-pruebas-solo-para-tests-0123456789abcdef
+  sensor-token: token-de-pruebas

@@ -1,0 +1,37 @@
+# Configuración común. Los perfiles dev y prod la completan (application-dev.yml, application-prod.yml).
+spring:
+  application:
+    name: reservas-cubiculos
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+
+server:
+  port: ${PORT:8095}
+
+# Reglas del negocio (todas se pueden cambiar sin tocar el código)
+reservas:
+  zona-horaria: America/Lima
+  apertura: "07:00"
+  cierre: "19:00"
+  dias-atencion: [MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY]
+  cuota-horas-dia: 1            # horas por estudiante y por día
+  minutos-checkin: 10           # si nadie llega en este tiempo, la sala se libera sola
+  minutos-aviso-fin: 5          # aviso "quedan N minutos" (luz roja en la maqueta)
+  minutos-cancelacion-gratis: 15  # cancelar hasta N min antes del inicio devuelve la hora
+  ausencias-para-pausa: 2       # ausencias seguidas que activan la pausa
+  dias-pausa: 1                 # días de atención sin poder reservar
+  cubiculos: 4
+  segundos-sin-senal: 30        # sin latido del sensor durante este tiempo = "sin señal"
+  cors-origenes: ["http://localhost:5195"]
+  sensor-token: ${RESERVAS_SENSOR_TOKEN:}   # clave que envía la maqueta en la cabecera X-Sensor-Token
+  jwt-secreto: ${RESERVAS_JWT_SECRETO:}     # mínimo 32 caracteres; en prod viene de una variable de entorno
+  jwt-horas: 12
+  demo:
+    habilitado: false
+    hora-inicio: "10:00"
+    clave-admin: ""
