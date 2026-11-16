@@ -1,0 +1,92 @@
+/* Colores y tipografía tomados del Canvas de Tecsup (medidos de una captura de la página). */
+:root {
+  /* Marca Tecsup en Canvas */
+  --azul-tecsup: #00b1f7;     /* barra lateral, acentos */
+  --texto: #334451;
+  --texto-suave: #47535c;
+  --gris-fondo: #f2f4f4;      /* fondo de botones y paneles */
+  --borde: #d7dade;
+  --linea: #8d959f;           /* líneas que separan secciones */
+
+  /* Ajustes propios por contraste: el azul de marca sobre blanco da solo 2,4:1 */
+  --azul-texto: #0079ad;      /* enlaces y botones principales (4,8:1 sobre blanco) */
+  --azul-hover: #00628b;
+  --azul-suave: #e5f6fe;
+  --texto-tenue: #5f6b74;
+
+  /* Estados de un cubículo (los mismos colores que la luz de la maqueta) */
+  --st-libre: #0b874b;
+  --st-reservado: #b45309;    /* ámbar */
+  --st-ocupado: #1d4ed8;      /* azul */
+  --st-por-terminar: #c5221f; /* rojo: quedan 5 minutos */
+  --st-admin: #475569;
+  --st-mantenimiento: #6d28d9; /* violeta */
+  --st-cerrado: #6b7780;
+
+  --exito-fondo: #e6f4ec;
+  --aviso-fondo: #fdf1e0;
+  --peligro-fondo: #fdeaea;
+
+  --radio: 4px;
+  --radio-grande: 8px;
+  --nav-ancho: 94px;
+  --sombra: 0 1px 3px rgba(51, 68, 81, 0.18), 0 1px 2px rgba(51, 68, 81, 0.12);
+
+  font-family: 'Lato', 'Lato Extended', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: var(--texto);
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+a {
+  color: var(--azul-texto);
+}
+
+button {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--azul-texto);
+  outline-offset: 2px;
+}
+
+.solo-lectores {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
